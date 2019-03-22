@@ -8,20 +8,18 @@ namespace DemoAspNetCore.Pages
     public class CustomerEditModel : PageModel
     {
         [BindProperty]
-        public Customer CustomerVal { get; set; }
+        public Dealer DealerVal { get; set; }
         public void OnGet(int id)
         {
             Console.WriteLine(id);
-            Random rnd = new Random();
-            int val = rnd.Next(0, 2);
 
-            CustomerVal = new Customer
+            DealerVal = new Dealer
             {
                 Id = id,
-                Price = 3.33m,
+                Balance = 3.33m,
                 Email = "jay@jay.com",
-                ReleaseDate = DateTime.Today,
-                Title = "Test",
+                StartDate = DateTime.Today,
+                Name = "Test",
                 EditUrl = "https://www.google.com"
             };
 

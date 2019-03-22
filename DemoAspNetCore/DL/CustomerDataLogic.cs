@@ -8,22 +8,22 @@ namespace DemoAspNetCore.DL
     {
         readonly List<string> _randomTitle = new List<string>() { "Demo One", "Demo Two", "Demo Three" };
         // Get All Records
-        public List<Customer> GetAll()
+        public List<Dealer> GetAll()
         {
-            var customerList = new List<Customer>();
+            var customerList = new List<Dealer>();
 
             for (var i = 1; i <= 100; i++)
             {
                 Random rnd = new Random();
                 int val = rnd.Next(0, 2);
 
-                var customer = new Customer
+                var customer = new Dealer
                 {
                     Id = i,
-                    Price = 3.33m,
+                    Balance = 3.33m,
                     Email = "jay@jay.com",
-                    ReleaseDate = DateTime.Today,
-                    Title = _randomTitle[val],
+                    StartDate = DateTime.Today,
+                    Name = _randomTitle[val],
                     EditUrl = "https://www.google.com"
                 };
 
@@ -35,16 +35,16 @@ namespace DemoAspNetCore.DL
 
 
         // Get a record by Id
-        public Customer Get(int id)
+        public Dealer Get(int id)
         {
             Console.WriteLine("Get All got called");
-            var customer = new Customer
+            var customer = new Dealer
             {
                 Id = id,
-                Price = 3.33m,
+                Balance = 3.33m,
                 Email = "jay@jay.com",
-                ReleaseDate = DateTime.Today,
-                Title = "The Id Is " + id,
+                StartDate = DateTime.Today,
+                Name = "The Id Is " + id,
                 EditUrl = "https://www.google.com"
             };
 
@@ -59,7 +59,7 @@ namespace DemoAspNetCore.DL
         }
 
         // Save
-        public Customer Post(Customer dto)
+        public Dealer Post(Dealer dto)
         {
             Console.WriteLine("Post got called");
 
@@ -71,13 +71,13 @@ namespace DemoAspNetCore.DL
             Random rnd = new Random();
             int val = rnd.Next(101, 200);
 
-            var customer = new Customer
+            var customer = new Dealer
             {
                 Id = val,
-                Price = dto.Price,
+                Balance = dto.Balance,
                 Email = dto.Email,
-                ReleaseDate = dto.ReleaseDate,
-                Title = dto.Title,
+                StartDate = dto.StartDate,
+                Name = dto.Name,
                 EditUrl = dto.EditUrl
             };
 
@@ -85,16 +85,16 @@ namespace DemoAspNetCore.DL
         }
 
         // Update
-        public Customer Put(Customer dto)
+        public Dealer Put(Dealer dto)
         {
             Console.WriteLine("Update Got Called");
-            var customer = new Customer
+            var customer = new Dealer
             {
                 Id = dto.Id,
-                Price = dto.Price,
+                Balance = dto.Balance,
                 Email = dto.Email,
-                ReleaseDate = dto.ReleaseDate,
-                Title = dto.Title,
+                StartDate = dto.StartDate,
+                Name = dto.Name,
                 EditUrl = dto.EditUrl
             };
 

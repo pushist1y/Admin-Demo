@@ -8,6 +8,6 @@ namespace DemoAspNetCore.Pages
     {
 
         [BindProperty]
-        public Customer Customer { get; set; }
+        public Dealer Dealer { get; set; }
     }
 }

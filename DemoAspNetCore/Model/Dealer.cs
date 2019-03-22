@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DemoAspNetCore.Model
 {
-    public class Customer
+    public class Dealer
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string Name { get; set; }
         [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
+        public DateTime StartDate { get; set; }
         [Required]
-        public decimal Price { get; set; }
+        public decimal Balance { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email Address")]
