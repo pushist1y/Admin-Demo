@@ -1,8 +1,24 @@
-﻿@page
-@model DemoAspNetCore.Pages.IndexModel
+﻿@page "{id:int?}"
+@model DemoAspNetCore.Pages.CustomerEditModel
+@{
+    ViewData["Title"] = "CustomerEdit";
+}
+
+<h1>Call List Edit Page</h1>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <html>
 <body>
+    <div asp-validation-summary="All"></div>
+    <form method="POST">
+        <div>Id: <input asp-for="CallListDtoVal.Id" /></div>
+        <div>Status: <input asp-for="CallListDtoVal.Status" /></div>
+        <div>Name: <input asp-for="CallListDtoVal.Name" /></div>
+        <div>CallStartDate: <input asp-for="CallListDtoVal.CallStartDate" /></div>
+        <div>LastCallDate: <input asp-for="CallListDtoVal.LastCallDate" /></div>
+        <div>CallSheet: <input asp-for="CallListDtoVal.CallSheet" /></div>
+        <input type="Submit" />
+        <button type="submit" asp-page-handler="delete" asp-route-id="CallListDtoVal.Id">Delete</button>
+    </form>
 </body>
 </html>
