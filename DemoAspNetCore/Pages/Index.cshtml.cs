@@ -32,7 +32,7 @@ namespace DemoAspNetCore.Pages
 
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
-            Console.WriteLine("DEL Got Called " + id);
+            Console.WriteLine("Del Got Called " + id);
 
             return RedirectToPage();
         }

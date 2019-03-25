@@ -12,8 +12,8 @@ namespace DemoAspNetCore.Model
         public DateTime CallStartDate { get; set; }
         [DataType(DataType.Date)]
         public DateTime LastCallDate { get; set; }
+        public string CallSheetLabel { get; set; }
         [DataType(DataType.Url)]
         public string CallSheet { get; set; }
-
     }
 }

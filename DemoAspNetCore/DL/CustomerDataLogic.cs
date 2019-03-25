@@ -10,6 +10,11 @@ namespace DemoAspNetCore.DL
         // Get All Records For a give group id
         public List<CallListDto> GetAll(int id)
         {
+            if (id == 0)
+            {
+                throw new Exception("ID is not valid");
+            }
+
             var customerList = new List<CallListDto>();
             id = id * 100;
 
@@ -25,6 +30,7 @@ namespace DemoAspNetCore.DL
                     Name = _randomTitle[val],
                     CallStartDate = DateTime.Today,
                     LastCallDate = DateTime.Today,
+                    CallSheetLabel = "Click Here",
                     CallSheet = "https://www.google.com"
                 };
 
@@ -38,7 +44,7 @@ namespace DemoAspNetCore.DL
         // Get a record by Id
         public CallListDto Get(int id)
         {
-            Console.WriteLine("Get All got called");
+            Console.WriteLine("Get All got called " + id);
             var customer = new CallListDto
             {
                 Id = id,
@@ -46,6 +52,7 @@ namespace DemoAspNetCore.DL
                 Name = _randomTitle[2],
                 CallStartDate = DateTime.Today,
                 LastCallDate = DateTime.Today,
+                CallSheetLabel = "Click Here",
                 CallSheet = "https://www.google.com"
             };
 
@@ -62,7 +69,7 @@ namespace DemoAspNetCore.DL
         // Save
         public CallListDto Post(CallListDto dto)
         {
-            Console.WriteLine("Post got called");
+            Console.WriteLine("Post got called " + dto.Id);
 
             if (dto.Name == "jay")
             {
@@ -79,6 +86,7 @@ namespace DemoAspNetCore.DL
                 Name = _randomTitle[2],
                 CallStartDate = DateTime.Today,
                 LastCallDate = DateTime.Today,
+                CallSheetLabel = "Click Here",
                 CallSheet = "https://www.google.com"
             };
 
@@ -88,7 +96,7 @@ namespace DemoAspNetCore.DL
         // Update
         public CallListDto Put(CallListDto dto)
         {
-            Console.WriteLine("Update Got Called");
+            Console.WriteLine("Update Got Called " + dto.Id);
             var customer = new CallListDto
             {
                 Id = 1,
@@ -96,6 +104,7 @@ namespace DemoAspNetCore.DL
                 Name = _randomTitle[2],
                 CallStartDate = DateTime.Today,
                 LastCallDate = DateTime.Today,
+                CallSheetLabel = "Click Here",
                 CallSheet = "https://www.google.com"
             };
 
