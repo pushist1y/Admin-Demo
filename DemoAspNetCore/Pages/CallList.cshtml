@@ -2,7 +2,18 @@
 @model DemoAspNetCore.Pages.IndexModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<html>
-<body>
-</body>
-</html>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div id="dataGrid"></div>
+    </div>
+  </div>
+</div>
+
+@section Scripts{
+  <script type="text/javascript">
+    $(function () {
+      window.initializeCallList(@Model.Id);
+    });
+  </script>
+}

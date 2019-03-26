@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "module": "es6",
+    "target": "es6",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./Typescript/Types"
+    ],
+    "outDir": "./tsdist"
+  },
+  //"compileOnSave": true,
+  "exclude": [
+    "node_modules",
+    "wwwroot",
+    "./Typescript/Types/**"
+  ],
+  "include": [ "./Typescript/**/*.ts" ]
+}

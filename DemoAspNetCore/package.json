@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "admin-demo",
+  "private": true,
+  "devDependencies": {
+    "@types/jquery": "^3.3.29",
+    "bootstrap": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "rimraf": "2.6.2",
+    "typescript": "~3.0.3",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "jquery": "^3.3.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "ts-loader": "^5.3.3"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "tsc": "tsc",
+    "webpack": "webpack",
+    "build": "webpack --config webpack.config.js"
+  }
+}
